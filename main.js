@@ -2,7 +2,7 @@ const search = document.getElementById("search");
 async function api() {
   search.addEventListener("click", async function () {
     const apiKey = "6ae6800ddaea110db0df8c6ce4812126";
-    const city = storeInput();
+ const city = storeInput().split(" ").join("");
     try {
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
